@@ -1,0 +1,10 @@
+/* global.css */
+@import "tailwindcss";
+
+/* Print sheet */
+
+@media print {
+  .print\\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .no-print { display: none !important; }
+  body { background: white !important; }
+}

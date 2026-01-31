@@ -1,0 +1,466 @@
+{
+  "HomePage": {
+    "logoTitle": "School Manager",
+    "logoSubtitle": "For Al Forqan School",
+    "tagline": "Streamlined dashboards for admins and teachers to manage classes, inquests, schedules, and notifications in one place.",
+    "ctaSignedIn": "Dashboard",
+    "ctaSignedOut": "Sign in",
+    "heroTitle": "ne platform for all your school needs.",
+    "heroSubtitle": "Admins can manage teachers, inquests, and schedules, while teachers receive clear notifications and a focused daily dashboard.",
+    "heroPrimary": "Go to Dashboard",
+    "heroSecondary": "Learn more",
+    "featurePreview": "Feature Preview",
+    "featureInquestsTitle": "Teachers Inquests",
+    "featureInquestsText": "Quickly create, track, and review inquests per teacher and academic year.",
+    "featureTeacherTitle": "Teacher Dashboard",
+    "featureTeacherText": "Teachers see alerts, inquests, and daily tasks in one view.",
+    "featureNotifyTitle": "Smart Notifications",
+    "featureNotifyText": "New inquests become notifications for the relevant teacher."
+  },
+  
+  "LessonsFilter": {
+    "title": "View Lessons & Teachers",
+    "classLabel": "Class",
+    "classPlaceholder": "— Select Class —",
+    "dateLabel": "Date",
+    "loading": "Loading…",
+    "showLessonsButton": "Show Lessons",
+    "showTeachersButton": "Show Teachers",
+    "selectClassAndDateFirst": "Select class & date first",
+    "showLessonsTable": "Show Lessons Table",
+    "showAssignedTeachers": "Show Assigned Teachers"
+  },
+  "AdminHome":{
+
+  "adminDashboardTitle": "Admin Dashboard",
+  "adminDashboardSubtitle": "Select a module to manage your school efficiently.",
+  "teachersInquestsName": "Teachers Inquests",
+  "teachersInquestsDescription": "Create, review, and track inquests for teachers.",
+  "teachersName": "Teachers",
+  "teachersDescription": "Manage teacher accounts and assignments.",
+  "announcementsName": "Announcements",
+  "announcementsDescription": "Create and send announcements to teachers.",
+  "openModule": "Open module",
+  "title": "Administration",
+    "subtitle": "Manage teachers, schedules, and lesson plans efficiently.",
+    "status": "System Online"
+
+
+  },
+  "LessonsTable": {
+    "title": "Submitted Lessons",
+    "noLessons": "No lessons submitted for this day.",
+    "subject": "Subject",
+    "unit": "Unit",
+    "lesson": "Lesson",
+    "objective": "Objective",
+    "pages": "Pages",
+    "homework": "Homework",
+    "comments": "Comments",
+    "print": "Print",
+    "dash": "—"
+  },
+  "TeacherDashboard": {
+    "errors": {
+      "requestFailed": "Request failed",
+      "notAuthenticated": "Not authenticated"
+    },
+    "toast": {
+      "loadingDashboard": "Loading dashboard…",
+      "dashboardReady": "Dashboard ready",
+      "loadFailed": "Failed to load: {message}",
+      "refreshLoading": "Refreshing lessons…",
+      "refreshSuccess": "Lessons updated",
+      "refreshFailed": "Failed to refresh: {message}",
+      "submitLoading": "Submitting lesson…",
+      "submitSuccess": "Lesson submitted successfully",
+      "submitFailed": "Failed to submit: {message}",
+      "saveLoading": "Saving changes…",
+      "saveSuccess": "Lesson updated",
+      "saveFailed": "Failed to update: {message}"
+    },
+    "loading": {
+      "fullscreen": "Loading...",
+      "processing": "Processing..."
+    },
+    "header": {
+      "title": "Teacher Dashboard",
+      "welcome": "Welcome back, {name}. Plan your day.",
+      "todayLabel": "Today:"
+    },
+    "form": {
+      "title": "New Lesson Plan",
+      "subtitle": "Submit daily lesson details",
+      "classLabel": "Class",
+      "classPlaceholder": "Select Class",
+      "subjectLabel": "Subject",
+      "subjectPlaceholder": "Select Subject",
+      "dateLabel": "Date",
+      "unitTitleLabel": "Unit & Title",
+      "unitPlaceholder": "Unit Number",
+      "lessonPlaceholder": "Lesson Title",
+      "objectiveLabel": "Objective",
+      "objectivePlaceholder": "Learning objective...",
+      "pagesLabel": "Pages",
+      "homeworkLabel": "Homework",
+      "commentsLabel": "Comments",
+      "resetButton": "Reset",
+      "submitButton": "Submit Plan",
+      "submitting": "Submitting..."
+    },
+    "table": {
+      "title": "Today's Schedule",
+      "subtitle": "View and edit submitted lessons",
+      "refreshTitle": "Refresh",
+      "emptyTitle": "No lessons submitted",
+      "emptySubtitle": "You haven't submitted any lesson plans for today yet.",
+      "emptyDash": "-",
+      "columns": {
+        "classSubject": "Class / Subject",
+        "unit": "Unit",
+        "lesson": "Lesson",
+        "objective": "Obj.",
+        "pages": "Pages",
+        "homework": "HW",
+        "comments": "Comments",
+        "action": "Action"
+      },
+      "editButton": "Edit",
+      "saveButton": "Save",
+      "cancelButton": "Cancel"
+    }
+  },
+   "AdminAnnouncementsPage": {
+    "create_new": "Create New Announcement",
+    "general_title": "General Announcement",
+    "general_desc": "Sent to <strong>all teachers</strong> in the school.",
+    "targeted_title": "Targeted Announcement",
+    "targeted_desc": "Choose specific teachers or subjects.",
+    "recent_title": "Recent Announcements",
+    "no_announcements": "No announcements yet.",
+    "view_attachment": "View attachment"
+  },
+  
+  "Sidebar": {
+    "overview": "Overview",
+    "teachersInquests": "Teachers Inquests",
+    "teachers": "Teachers",
+    "announcements": "Announcements",
+    "dailyLessonsManagement": "Daily Lessons Management",
+    "myInquests": "My Inquests",
+    "notifications": "Notifications"
+  },
+  "DashboardNavbar": {
+    "appName": "School Manager",
+    "adminDashboard": "Admin Dashboard",
+    "teacherDashboard": "Teacher Dashboard",
+    "inquests": "Inquests",
+    "teachers": "Teachers",
+    "notifications": "Notifications",
+    "user": "User"
+  },
+
+  "ProfileDropdown": {
+    "roles": {
+      "admin": "Administrator",
+      "teacher": "Teacher"
+    },
+    "viewProfile": "View / Edit profile",
+    "settings": "Account settings"
+  },
+   "AdminTeachers": {
+    "title": "Manage Teachers",
+    "subtitle": "Create, edit, and assign teachers to classes and subjects.",
+
+    "loading": "Loading teachers and data...",
+
+    "table": {
+      "title": "All Teachers ({count})",
+      "username": "Username",
+      "name": "Name",
+      "email": "Email",
+      "classes": "Classes",
+      "subjects": "Subjects",
+      "actions": "Actions"
+    },
+
+    "empty": {
+      "title": "No teachers found",
+      "subtitle": "Click \"Add New Teacher\" to get started."
+    },
+
+    "noEmail": "No email",
+
+    "actions": {
+      "addTeacher": "Add New Teacher",
+      "addClass": "Add New Class",
+      "addSubject": "Add New Subject",
+      "delete": "Delete"
+    },
+
+    "success": {
+      "teacherCreated": "Teacher created successfully",
+      "teacherUpdated": "Teacher updated successfully",
+      "teacherDeleted": "Teacher deleted",
+      "classCreated": "Class created successfully",
+      "subjectCreated": "Subject created successfully"
+    },
+
+    "errors": {
+      "load": "Failed to load data",
+      "refresh": "Failed to refresh teachers",
+      "passwordRequired": "Password is required",
+      "createTeacher": "Failed to create teacher",
+      "updateTeacher": "Failed to update teacher",
+      "deleteTeacher": "Failed to delete teacher",
+      "createClass": "Failed to create class",
+      "createSubject": "Failed to create subject"
+    },
+
+    "confirmDelete": "Are you sure you want to delete this teacher? This cannot be undone.",
+    "password": "Password",
+  "newPassword": "New Password (leave blank to keep current)",
+  "cancel": "Cancel",
+  "saveChanges": "Save Changes",
+  "createClassTitle": "Create New Class",
+  "createSubjectTitle": "Create New Subject",
+  "classNamePlaceholder": "Class name",
+  "subjectNamePlaceholder": "Subject name",
+  "editTeacherTitle": "Edit Teacher: {{name}}",
+  "assignClasses": "Assign Classes",
+  "assignSubjects": "Assign Subjects"
+  },
+  "AdminDashboard": {
+    "title": "Admin Dashboard",
+    "subtitle": "Manage teachers, classes, subjects and view lessons.",
+    "status": "System Online",
+
+    "buttons": {
+      "createTeacher": "Create Teacher",
+      "hideCreateTeacher": "Hide Create Teacher",
+      "exportTeachersCsv": "Export Teachers CSV",
+      "showTeacherDetails": "Show Teacher Details",
+      "hideTeacherDetails": "Hide Teacher Details",
+      "teachersCards": "Teachers Cards",
+      "createClass": "Create Class",
+      "hideCreateClass": "Hide Create Class",
+      "createSubject": "Create Subject",
+      "hideCreateSubject": "Hide Create Subject",
+      "manageSchedules": "Manage Schedules",
+      "saveAllGrades": "Save All Grades for Date",
+      "savingAllGrades": "Saving All Grades…"
+    },
+
+    "table": {
+      "username": "Username",
+      "name": "Name",
+      "classes": "Classes",
+      "subjects": "Subjects"
+    },
+
+    "confirm": {
+      "deleteTeacher": "Are you sure you want to delete this teacher?"
+    },
+
+    "errors": {
+      "selectClassAndDate": "Please select both class and date",
+      "selectDateFirst": "Please select a date first",
+      "loadLessons": "Failed to load lessons",
+      "loadAllGrades": "Failed to load lessons for all grades"
+    },
+
+    "toast": {
+      "loading": "Working…",
+      "saving": "Saving…",
+      "updated": "Updated",
+      "deleted": "Deleted",
+      "failed": "Failed"
+    },
+
+    "loading": {
+      "working": "Working…"
+    },
+
+    "print": {
+      "dailyPlan": "Daily Academic Plan"
+    }
+  },
+  "CreateTeacherForm": {
+    "title": "Create Teacher",
+    "labels": {
+      "username": "Username",
+      "name": "Name",
+      "password": "Password",
+      "assignClasses": "Assign Classes",
+      "assignSubjects": "Assign Subjects"
+    },
+    "placeholders": {
+      "username": "Enter username",
+      "name": "Enter full name",
+      "password": "Enter password"
+    },
+    "buttons": {
+      "create": "Create Teacher",
+      "working": "Working…"
+    },
+    "toast": {
+      "creating": "Creating teacher…",
+      "success": "Teacher created successfully",
+      "error": "Failed to create teacher:"
+    }
+  },
+  "CreateClassForm": {
+    "title": "Create Class",
+    "labels": {
+      "name": "Class Name"
+    },
+    "placeholders": {
+      "name": "Enter class name"
+    },
+    "buttons": {
+      "create": "Create Class",
+      "working": "Working…"
+    },
+    "toast": {
+      "creating": "Creating class…",
+      "success": "Class created successfully",
+      "error": "Failed to create class:"
+    }
+  },
+  "CreateSubjectForm": {
+    "title": "Create Subject",
+    "labels": {
+      "name": "Subject Name"
+    },
+    "placeholders": {
+      "name": "Enter subject name"
+    },
+    "buttons": {
+      "create": "Create Subject",
+      "working": "Working…"
+    },
+    "toast": {
+      "creating": "Creating subject…",
+      "success": "Subject created successfully",
+      "error": "Failed to create subject:"
+    }
+  },
+  "TeacherList": {
+    "title": "Teachers",
+    "table": {
+      "headers": {
+        "username": "Username",
+        "name": "Name",
+        "password": "Password",
+        "classes": "Classes",
+        "subjects": "Subjects",
+        "actions": "Actions"
+      },
+      "noPassword": "—",
+      "noData": "—"
+    },
+    "buttons": {
+      "edit": "Edit",
+      "delete": "Delete"
+    }
+  },
+  "TeacherDashboards": {
+    "title": "Teacher Dashboard",
+    "welcome": "Welcome, {name} ({role})",
+    "loading": "Loading...",
+    "toast": {
+      "loadingDashboard": "Loading dashboard…",
+      "dashboardReady": "Dashboard ready",
+      "loadFailed": "Failed to load",
+      "refreshingLessons": "Refreshing lessons…",
+      "lessonsUpdated": "Lessons updated",
+      "refreshFailed": "Failed to refresh",
+      "submittingLesson": "Submitting lesson…",
+      "lessonSubmitted": "Lesson submitted",
+      "submitFailed": "Failed to submit",
+      "savingChanges": "Saving changes…",
+      "lessonUpdated": "Lesson updated",
+      "updateFailed": "Failed to update"
+    },
+    "TeacherDataPage": {
+    "errors": {
+      "requestFailed": "Request failed"
+    },
+    "toast": {
+      "loading": "Loading teachers…",
+      "success": "Teachers loaded",
+      "error": "Failed to load: {message}"
+    },
+    "header": {
+      "title": "Teacher Details",
+      "subtitle": "Formatted cards for export and printing."
+    },
+    "actions": {
+      "back": "Back",
+      "print": "Print"
+    },
+    "card": {
+      "classesCount": "{count} classes",
+      "username": "Username:",
+      "password": "Password:",
+      "classes": "Classes:",
+      "none": "None",
+      "noneDash": "-"
+    },
+    "empty": "No teachers found.",
+    "loading": {
+      "working": "Working..."
+    }
+  },
+    "errors": {
+      "notAuthenticated": "Not authenticated"
+    },
+    "form": {
+      "labels": {
+        "class": "Class",
+        "subject": "Subject",
+        "date": "Date",
+        "unit": "Unit",
+        "lesson": "Lesson",
+        "objective": "Objective",
+        "pages": "Pages",
+        "homework": "Homework",
+        "comments": "Comments"
+      },
+      "selectClass": "Select Class",
+      "selectSubject": "Select Subject"
+    },
+    "buttons": {
+      "reset": "Reset",
+      "working": "Working…",
+      "submitLesson": "Submit Lesson",
+      "refresh": "Refresh",
+      "refreshing": "Refreshing…",
+      "save": "Save",
+      "cancel": "Cancel",
+      "edit": "Edit"
+    },
+    "lessons": {
+      "title": "Today’s Lessons",
+      "empty": "No lessons submitted for today yet.",
+      "noData": "-",
+      "headers": {
+        "class": "Class",
+        "subject": "Subject",
+        "unit": "Unit",
+        "lesson": "Lesson",
+        "objective": "Objective",
+        "pages": "Pages",
+        "homework": "Homework",
+        "comments": "Comments",
+        "actions": "Actions"
+      }
+    }
+    
+  }
+ 
+
+
+  
+  
+}

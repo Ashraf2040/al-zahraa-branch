@@ -1,0 +1,171 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id             String    @id @default(uuid())
+  username       String    @unique
+  name           String
+  password       String
+  role           String
+
+  classes        Class[]   @relation("TeacherClasses")
+  subjects       Subject[] @relation("TeacherSubjects")
+  lessons        Lesson[]
+  scheduleItem   ScheduleItem[]
+  createdSchedules Schedule[] @relation("ScheduleCreator")  // ✅ NEW
+
+  absences       Substitution[] @relation("AbsentTeacher")
+  replacements   Substitution[] @relation("ReplacementTeacher")
+}
+
+model Class {
+  id          String       @id @default(uuid())
+  name        String
+  teachers    User[]       @relation("TeacherClasses")
+  lessons     Lesson[]
+  schedule    Schedule[]
+  substitutions   Substitution[]
+}
+
+model Subject {
+  id              String           @id @default(uuid())
+  name            String
+  teachers        User[]           @relation("TeacherSubjects")
+  lessons         Lesson[]
+  weeklyPlanItems WeeklyPlanItem[]
+  grades          GradeSubject[]
+  scheduleItems   ScheduleItem[]
+  substitutions   Substitution[]
+}
+
+model Lesson {
+  id         String   @id @default(uuid())
+  classId    String
+  subjectId  String
+  teacherId  String
+  date       DateTime
+  unit       String
+  pages      String
+  lesson     String
+  objective  String
+  homework   String?
+  createdAt  DateTime @default(now())
+  comments   String?
+  class      Class    @relation(fields: [classId], references: [id])
+  subject    Subject  @relation(fields: [subjectId], references: [id])
+  teacher    User     @relation(fields: [teacherId], references: [id])
+}
+
+model Grade {
+  id        String         @id @default(uuid())
+  name      String         @unique
+  subjects  GradeSubject[]
+  plans     WeeklyPlan[]
+}
+
+model GradeSubject {
+  gradeId   String
+  subjectId String
+  grade     Grade   @relation(fields: [gradeId], references: [id], onDelete: Cascade)
+  subject   Subject @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+
+  @@id([gradeId, subjectId])
+}
+
+model WeeklyPlan {
+  id        String   @id @default(uuid())
+  gradeId   String?
+  week      String
+  fromDate  DateTime
+  toDate    DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  note       String?
+  dictation  String?
+  grade     Grade?   @relation(fields: [gradeId], references: [id])
+  items     WeeklyPlanItem[]
+}
+
+model WeeklyPlanItem {
+  id            String     @id @default(uuid())
+  weeklyPlanId  String
+  subjectId     String
+  unit          String
+  lessons       String
+  pages         String
+  homework      String?
+  classwork     String?
+  dictation     String?
+
+  weeklyPlan WeeklyPlan @relation(fields: [weeklyPlanId], references: [id], onDelete: Cascade)
+  subject    Subject    @relation(fields: [subjectId], references: [id])
+}
+
+model Schedule {
+  id        String   @id @default(uuid())
+  classId   String
+  name      String?
+  isActive  Boolean  @default(true)  // ✅ NEW: Track active schedule
+  createdBy String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  class     Class    @relation(fields: [classId], references: [id])
+  creator   User     @relation("ScheduleCreator", fields: [createdBy], references: [id])  // ✅ NEW
+  items     ScheduleItem[]
+
+  @@index([classId, isActive])  // ✅ NEW: Performance optimization
+}
+
+model Substitution {
+  id           String   @id @default(uuid())
+  date         DateTime
+  dayIndex     Int
+  session      Int
+  start        String
+  end          String
+  classId      String
+  subjectId    String?
+  absentId     String
+  replacementId String
+  createdAt    DateTime @default(now())
+  class        Class    @relation(fields: [classId], references: [id])
+  subject      Subject? @relation(fields: [subjectId], references: [id])
+  absent       User     @relation("AbsentTeacher", fields: [absentId], references: [id])
+  replacement  User     @relation("ReplacementTeacher", fields: [replacementId], references: [id])
+
+  @@index([date])
+  @@index([absentId])
+  @@index([replacementId])
+}
+
+model ScheduleItem {
+  id          String   @id @default(uuid())
+  scheduleId  String
+  dayIndex    Int
+  session     Int
+  start       String
+  end         String
+  subjectId   String
+  teacherId   String
+
+  schedule    Schedule @relation(fields: [scheduleId], references: [id], onDelete: Cascade)
+  subject     Subject  @relation(fields: [subjectId], references: [id])
+  teacher     User     @relation(fields: [teacherId], references: [id])
+
+  @@index([scheduleId])
+  @@index([teacherId])
+  @@index([subjectId])
+  @@index([dayIndex, session])
+}
+
+enum Role {
+  TEACHER
+  ADMIN
+  COORDINATOR
+}

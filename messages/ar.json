@@ -1,0 +1,540 @@
+{
+  "HomePage": {
+    "logoTitle": "مدير المدرسة",
+    "logoSubtitle": "لمدرسة الفرقان",
+    "tagline": "لوحات تحكم مبسطة للمديرين والمعلمين لإدارة الحصص، المساءلات، الجداول، والإشعارات في مكان واحد.",
+    "ctaSignedIn": "لوحة التحكم",
+    "ctaSignedOut": "تسجيل الدخول",
+    "heroTitle": "منصة واحدة لكل احتياجات إدارة مدرستك.",
+    "heroSubtitle": "يمكن للمديرين إدارة المعلمين والمساءلات والجداول، بينما يحصل المعلمون على إشعارات واضحة ولوحة يومية مركّزة.",
+    "heroPrimary": "اذهب إلى لوحة التحكم",
+    "heroSecondary": "اعرف المزيد",
+    "featurePreview": "عرض المزايا",
+    "featureInquestsTitle": "مساءلةات المعلمين",
+    "featureInquestsText": "أنشئ وتابع وراجع مساءلات المعلمين حسب المعلم والسنة الدراسية.",
+    "featureTeacherTitle": "لوحة تحكم المعلم",
+    "featureTeacherText": "يرى المعلم التنبيهات والمساءلات والمهام اليومية في مكان واحد.",
+    "featureNotifyTitle": "إشعارات ذكية",
+    "featureNotifyText": "تصبح المساءلةات الجديدة إشعارات للمعلم المعني."
+  },
+   "LessonsFilter": {
+    "title": "عرض الحصص والمعلمين",
+    "classLabel": "الصف",
+    "classPlaceholder": "— اختر الصف —",
+    "dateLabel": "التاريخ",
+    "loading": "جارٍ التحميل…",
+    "showLessonsButton": "عرض الحصص",
+    "showTeachersButton": "عرض المعلمين",
+    "selectClassAndDateFirst": "اختر الصف والتاريخ أولاً",
+    "showLessonsTable": "عرض جدول الحصص",
+    "showAssignedTeachers": "عرض المعلمين المكلّفين"
+  },
+  "LessonsTable": {
+    "title": "الحصص المرسلة",
+    "noLessons": "لا توجد حصص مسجلة لهذا اليوم.",
+    "subject": "المادة",
+    "unit": "الوحدة",
+    "lesson": "الدرس",
+    "objective": "هدف الدرس",
+    "pages": "الصفحات",
+    "homework": "الواجب المنزلي",
+    "comments": "ملاحظات",
+    "print": "طباعة",
+    "dash": "—"
+  },
+   "TeacherDashboard": {
+    "errors": {
+      "requestFailed": "فشل الطلب",
+      "notAuthenticated": "غير مصرح لك"
+    },
+    "toast": {
+      "loadingDashboard": "جارٍ تحميل لوحة التحكم…",
+      "dashboardReady": "لوحة التحكم جاهزة",
+      "loadFailed": "فشل التحميل: {message}",
+      "refreshLoading": "جارٍ تحديث الحصص…",
+      "refreshSuccess": "تم تحديث الحصص",
+      "refreshFailed": "فشل التحديث: {message}",
+      "submitLoading": "جارٍ إرسال الخطة…",
+      "submitSuccess": "تم إرسال الخطة بنجاح",
+      "submitFailed": "فشل الإرسال: {message}",
+      "saveLoading": "جارٍ حفظ التعديلات…",
+      "saveSuccess": "تم تحديث الخطة",
+      "saveFailed": "فشل التحديث: {message}"
+    },
+    "loading": {
+      "fullscreen": "جارٍ التحميل...",
+      "processing": "جارٍ المعالجة..."
+    },
+    "header": {
+      "title": "لوحة تحكم المعلم",
+      "welcome": "مرحباً بعودتك، {name}. نظّم يومك.",
+      "todayLabel": "اليوم:"
+    },
+    "form": {
+      "title": "خطة درس جديدة",
+      "subtitle": "أدخل تفاصيل خطة الدرس اليومية",
+      "classLabel": "الصف",
+      "classPlaceholder": "اختر الصف",
+      "subjectLabel": "المادة",
+      "subjectPlaceholder": "اختر المادة",
+      "dateLabel": "التاريخ",
+      "unitTitleLabel": "الوحدة والعنوان",
+      "unitPlaceholder": "رقم الوحدة",
+      "lessonPlaceholder": "عنوان الدرس",
+      "objectiveLabel": "هدف الدرس",
+      "objectivePlaceholder": "هدف التعلم...",
+      "pagesLabel": "الصفحات",
+      "homeworkLabel": "الواجب",
+      "commentsLabel": "ملاحظات",
+      "resetButton": "تفريغ الحقول",
+      "submitButton": "إرسال الخطة",
+      "submitting": "جارٍ الإرسال..."
+    },
+    "table": {
+      "title": "جدول حصص اليوم",
+      "subtitle": "عرض وتعديل الحصص المرسلة",
+      "refreshTitle": "تحديث",
+      "emptyTitle": "لا توجد حصص مسجلة",
+      "emptySubtitle": "لم تقم بإرسال أي خطة درس لليوم بعد.",
+      "emptyDash": "-",
+      "columns": {
+        "classSubject": "الصف / المادة",
+        "unit": "الوحدة",
+        "lesson": "الدرس",
+        "objective": "الهدف",
+        "pages": "الصفحات",
+        "homework": "الواجب",
+        "comments": "ملاحظات",
+        "action": "إجراء"
+      },
+      "editButton": "تعديل",
+      "saveButton": "حفظ",
+      "cancelButton": "إلغاء"
+    }
+  },
+  "AdminHome": {
+    "adminDashboardTitle": "لوحة تحكم المسؤول",
+    "adminDashboardSubtitle": "اختر وحدة لإدارة مدرستك بكفاءة.",
+    "teachersInquestsName": "مساءلات المعلمين",
+    "teachersInquestsDescription": "إنشاء ومراجعة وتتبع الاستقصاءات الخاصة بالمعلمين.",
+    "teachersName": "المعلمين",
+    "teachersDescription": "إدارة حسابات المعلمين وتوزيع المهام.",
+    "announcementsName": "التعميمات",
+    "announcementsDescription": "إنشاء وإرسال التعميمات للمعلمين.",
+    "openModule": "افتح الوحدة"
+  },
+  "DashboardAdminAnnouncements": {
+    "title": "إنشاء تعميم جديد",
+    "general": {
+      "title": "تعميم عام",
+      "description": "يُرسل إلى جميع المعلمين في المدرسة."
+    },
+    "targeted": {
+      "title": "تعميم موجه",
+      "description": "اختر معلمين أو مواد محددة."
+    },
+    "recent": {
+      "title": "التعميمات الأخيرة",
+      "empty": "لا توجد تعميمات حتى الآن.",
+      "viewAttachment": "عرض المرفق"
+    }
+  },
+  "AdminAnnouncementsPage": {
+    "create_new": "إنشاء إعلان جديد",
+    "general_title": "إعلان عام",
+    "general_desc": "يُرسل إلى <strong>جميع المعلمين</strong> في المدرسة.",
+    "targeted_title": "إعلان موجه",
+    "targeted_desc": "اختر معلمين أو مواد دراسية محددة.",
+    "recent_title": "الإعلانات الأخيرة",
+    "no_announcements": "لا توجد إعلانات حتى الآن.",
+    "view_attachment": "عرض المرفق"
+  },
+ "Sidebar": {
+    "overview": "نظرة عامة",
+    "teachersInquests": "مساءلات المعلمين",
+    "teachers": "المعلمون",
+    "announcements": "الإعلانات",
+    "dailyLessonsManagement": "إدارة الدروس اليومية",
+    "myInquests": "مساءلاتي",
+    "notifications": "الإشعارات"
+  },
+  "DashboardNavbar": {
+    "appName": "إدارة المدرسة",
+    "adminDashboard": "لوحة تحكم المدير",
+    "teacherDashboard": "لوحة تحكم المعلم",
+    "inquests": "المساءلات",
+    "teachers": "المعلمون",
+    "notifications": "الإشعارات",
+    "user": "مستخدم"
+  },
+  "AdminInquests": {
+    "title": "مساءلات المعلمين",
+    "subtitle": "إنشاء ومراجعة وإدارة مساءلات المعلمين بكفاءة.",
+
+    "errors": {
+      "loadInitial": "فشل في تحميل البيانات الأولية",
+      "loadInquests": "فشل في تحميل المساءلات",
+      "selectYearTeacher": "يرجى اختيار السنة الدراسية والمعلم",
+      "create": "فشل في إنشاء المساءلة"
+    },
+
+    "success": {
+      "created": "تم إنشاء المساءلة وإرسال الإشعار"
+    },
+
+    "pdf": {
+      "generating": "جارٍ إنشاء ملف PDF...",
+      "downloaded": "تم تنزيل ملف PDF",
+      "failed": "فشل في إنشاء ملف PDF"
+    }
+  },
+  "InquestsFilters": {
+    "academicYear": "السنة الدراسية",
+    "allYears": "جميع السنوات",
+    "current": "الحالية",
+
+    "month": "الشهر",
+    "allMonths": "كل الشهور",
+
+    "teacher": "المعلم",
+    "allTeachers": "جميع المعلمين",
+
+    "status": "الحالة",
+    "allStatuses": "جميع الحالات",
+
+    "statuses": {
+      "pending": "قيد الانتظار",
+      "responded": "تم الرد",
+      "completed": "مكتمل"
+    },
+
+    "create": "إنشاء مساءلة جديد"
+  },
+  "InquestsTable": {
+    "title": "جميع المساءلات ({count})",
+    "subtitle": "انقر على الصف لعرض التفاصيل أو إضافة قرار.",
+
+    "columns": {
+      "date": "التاريخ",
+      "teacher": "المعلم",
+      "type": "النوع",
+      "reason": "السبب",
+      "status": "الحالة",
+      "action": "الإجراء"
+    },
+
+    "empty": "لا توجد مساءلات مطابقة للفلاتر الحالية.",
+
+    "types": {
+      "ABSENT": "غياب",
+      "NEGLIGENCE": "إهمال"
+    },
+
+    "statuses": {
+      "PENDING": "قيد الانتظار",
+      "RESPONDED": "تم الرد",
+      "COMPLETED": "مكتمل"
+    },
+
+    "actions": {
+      "addDecision": "إضافة قرار",
+      "preview": "معاينة"
+    }
+  },
+  "InquestCreateForm": {
+    "title": "إنشاء مساءلة جديد",
+    "cancel": "إلغاء",
+
+    "academicYear": "السنة الدراسية",
+    "selectYear": "اختر السنة...",
+    "current": "الحالية",
+
+    "teacher": "المعلم",
+    "selectTeacher": "اختر المعلم...",
+
+    "type": "نوع المساءلة",
+    "types": {
+      "ABSENT": "غياب",
+      "NEGLIGENCE": "إهمال"
+    },
+
+    "absenceDate": "تاريخ الغياب",
+
+    "reason": "السبب",
+    "autoReason": "توضيح سبب الغياب بتاريخ {date}",
+    "autoReasonHint": "يتم تعبئته تلقائيًا حسب التاريخ (يمكن التعديل إذا لزم)",
+
+    "details": "تفاصيل (اختياري)",
+
+    "teacherInfo": "معلومات المعلم (تعبئة تلقائية)",
+    "jobTitle": "المسمى الوظيفي",
+    "specialty": "التخصص",
+    "school": "المدرسة",
+
+    "submit": "إنشاء المساءلة",
+    "saving": "جارٍ الحفظ..."
+  },
+   "InquestDecisionForm": {
+    "title": "إضافة القرار النهائي",
+    "cancel": "إلغاء",
+
+    "principalOpinion": "رأي قائد المدرسة",
+
+    "options": {
+      "Excuse accepted": "Excuse accepted",
+      "Alert": "Alert",
+      "Draw attention": "Draw attention",
+      "Deduction for NOT accepting this excuse": "Deduction for NOT accepting this excuse",
+
+      "Excuse accepted_ar": "عذر مقبول",
+      "Alert_ar": "تنبيه",
+      "Draw attention_ar": "لفت نظر",
+      "Deduction for NOT accepting this excuse_ar": "حسم لعدم قبول العذر"
+    },
+
+    "drawAttention": {
+      "title": "نص لفت النظر (سيتم إرساله للمعلم)",
+      "description": "اكتب النص الرسمي للفت النظر كما في النموذج المعتمد",
+      "placeholder": "نص لفت النظر"
+    },
+
+    "finalDecision": "القرار النهائي",
+    "finalDecisionPlaceholder": "القرار النهائي",
+
+    "submit": "حفظ القرار وإغلاق المساءلة",
+    "saving": "جارٍ الحفظ..."
+  },
+  "ProfileDropdown": {
+    "roles": {
+      "admin": "مدير النظام",
+      "teacher": "معلم"
+    },
+    "viewProfile": "عرض / تعديل الملف الشخصي",
+    "settings": "إعدادات الحساب"
+  },
+  "AdminTeachers": {
+    "title": "إدارة المعلمين",
+    "subtitle": "إنشاء وتعديل وتعيين المعلمين للصفوف والمواد.",
+
+    "loading": "جارٍ تحميل المعلمين والبيانات...",
+
+    "table": {
+      "title": "جميع المعلمين ({count})",
+      "username": "اسم المستخدم",
+      "name": "الاسم",
+      "email": "البريد الإلكتروني",
+      "classes": "الصفوف",
+      "subjects": "المواد",
+      "actions": "الإجراءات"
+    },
+
+    "empty": {
+      "title": "لا يوجد معلمون",
+      "subtitle": "اضغط على \"إضافة معلم جديد\" للبدء."
+    },
+
+    "noEmail": "لا يوجد بريد إلكتروني",
+
+    "actions": {
+      "addTeacher": "إضافة معلم جديد",
+      "addClass": "إضافة صف جديد",
+      "addSubject": "إضافة مادة جديدة",
+      "delete": "حذف"
+    },
+
+    "success": {
+      "teacherCreated": "تم إنشاء المعلم بنجاح",
+      "teacherUpdated": "تم تحديث المعلم بنجاح",
+      "teacherDeleted": "تم حذف المعلم",
+      "classCreated": "تم إنشاء الصف بنجاح",
+      "subjectCreated": "تم إنشاء المادة بنجاح"
+    },
+
+    "errors": {
+      "load": "فشل في تحميل البيانات",
+      "refresh": "فشل في تحديث المعلمين",
+      "passwordRequired": "كلمة المرور مطلوبة",
+      "createTeacher": "فشل في إنشاء المعلم",
+      "updateTeacher": "فشل في تحديث المعلم",
+      "deleteTeacher": "فشل في حذف المعلم",
+      "createClass": "فشل في إنشاء الصف",
+      "createSubject": "فشل في إنشاء المادة"
+    },
+
+    "confirmDelete": "هل أنت متأكد من حذف هذا المعلم؟ لا يمكن التراجع عن هذا الإجراء.",
+    "password": "كلمة المرور",
+  "newPassword": "كلمة مرور جديدة (اتركها فارغة للاحتفاظ بالحالية)",
+  "cancel": "إلغاء",
+  "saveChanges": "حفظ التغييرات",
+  "createClassTitle": "إنشاء فصل دراسي جديد",
+  "createSubjectTitle": "إنشاء مادة دراسية جديدة",
+  "classNamePlaceholder": "اسم الفصل",
+  "subjectNamePlaceholder": "اسم المادة",
+  "editTeacherTitle": "تعديل المعلم: {{name}}",
+  "assignClasses": "تعيين الفصول",
+  "assignSubjects": "تعيين المواد"
+  },
+  "AdminDashboard": {
+    "title": "لوحة تحكم المشرف",
+    "subtitle": "إدارة المعلمين، الفصول الدراسية، المواد وعرض الدروس.",
+    "status": "النظام متصل",
+    "buttons": {
+      "createTeacher": "إنشاء معلم جديد",
+      "hideCreateTeacher": "إخفاء نموذج إنشاء المعلم",
+      "exportTeachersCsv": "تصدير بيانات المعلمين (CSV)",
+      "showTeacherDetails": "عرض تفاصيل المعلمين",
+      "hideTeacherDetails": "إخفاء تفاصيل المعلمين",
+      "teachersCards": "بطاقات المعلمين",
+      "createClass": "إنشاء فصل جديد",
+      "hideCreateClass": "إخفاء نموذج إنشاء الفصل",
+      "createSubject": "إنشاء مادة جديدة",
+      "hideCreateSubject": "إخفاء نموذج إنشاء المادة",
+      "manageSchedules": "إدارة الجداول",
+      "saveAllGrades": "حفظ جميع الصفوف لهذا التاريخ",
+      "savingAllGrades": "جاري حفظ جميع الصفوف..."
+    },
+
+    "table": {
+      "username": "اسم المستخدم",
+      "name": "الاسم",
+      "classes": "الفصول",
+      "subjects": "المواد"
+    },
+
+    "confirm": {
+      "deleteTeacher": "هل أنت متأكد من حذف هذا المعلم؟"
+    },
+
+    "errors": {
+      "selectClassAndDate": "يرجى اختيار الفصل والتاريخ",
+      "selectDateFirst": "يرجى اختيار التاريخ أولاً",
+      "loadLessons": "فشل تحميل الدروس",
+      "loadAllGrades": "فشل تحميل الدروس لجميع الصفوف"
+    },
+
+    "toast": {
+      "loading": "جاري العمل...",
+      "saving": "جاري الحفظ...",
+      "updated": "تم التحديث بنجاح",
+      "deleted": "تم الحذف بنجاح",
+      "failed": "حدث خطأ"
+    },
+
+    "loading": {
+      "working": "جاري العمل..."
+    },
+
+    "print": {
+      "dailyPlan": "الخطة اليومية الأكاديمية"
+    }
+  },
+ "CreateTeacherForm": {
+    "title": "إنشاء معلم جديد",
+    "labels": {
+      "username": "اسم المستخدم",
+      "name": "الاسم",
+      "password": "كلمة المرور",
+      "assignClasses": "تعيين الفصول",
+      "assignSubjects": "تعيين المواد"
+    },
+    "placeholders": {
+      "username": "أدخل اسم المستخدم",
+      "name": "أدخل الاسم الكامل",
+      "password": "أدخل كلمة المرور"
+    },
+    "buttons": {
+      "create": "إنشاء المعلم",
+      "working": "جاري العمل…"
+    },
+    "toast": {
+      "creating": "جاري إنشاء المعلم…",
+      "success": "تم إنشاء المعلم بنجاح",
+      "error": "فشل إنشاء المعلم:"
+    }
+  },
+  "TeacherDataPage": {
+    "errors": {
+      "requestFailed": "فشل الطلب"
+    },
+    "toast": {
+      "loading": "جارٍ تحميل المعلمين…",
+      "success": "تم تحميل بيانات المعلمين",
+      "error": "فشل التحميل: {message}"
+    },
+    "header": {
+      "title": "بيانات المعلمين",
+      "subtitle": "بطاقات منسّقة للطباعة أو التصدير."
+    },
+    "actions": {
+      "back": "رجوع",
+      "print": "طباعة"
+    },
+    "card": {
+      "classesCount": "{count} صفوف",
+      "username": "اسم المستخدم:",
+      "password": "كلمة المرور:",
+      "classes": "الصفوف:",
+      "none": "لا يوجد",
+      "noneDash": "-"
+    },
+    "empty": "لا يوجد معلمون.",
+    "loading": {
+      "working": "جارٍ العمل..."
+    }
+  },
+  "CreateClassForm": {
+    "title": "إنشاء فصل دراسي",
+    "labels": {
+      "name": "اسم الفصل"
+    },
+    "placeholders": {
+      "name": "أدخل اسم الفصل"
+    },
+    "buttons": {
+      "create": "إنشاء الفصل",
+      "working": "جاري العمل…"
+    },
+    "toast": {
+      "creating": "جاري إنشاء الفصل…",
+      "success": "تم إنشاء الفصل بنجاح",
+      "error": "فشل إنشاء الفصل:"
+    }
+  },
+  "CreateSubjectForm": {
+    "title": "إنشاء مادة دراسية",
+    "labels": {
+      "name": "اسم المادة"
+    },
+    "placeholders": {
+      "name": "أدخل اسم المادة"
+    },
+    "buttons": {
+      "create": "إنشاء المادة",
+      "working": "جاري العمل…"
+    },
+    "toast": {
+      "creating": "جاري إنشاء المادة…",
+      "success": "تم إنشاء المادة بنجاح",
+      "error": "فشل إنشاء المادة:"
+    }
+  },
+  "TeacherList": {
+    "title": "المعلمون",
+    "table": {
+      "headers": {
+        "username": "اسم المستخدم",
+        "name": "الاسم",
+        "password": "كلمة المرور",
+        "classes": "الفصول",
+        "subjects": "المواد",
+        "actions": "الإجراءات"
+      },
+      "noPassword": "—",
+      "noData": "—"
+    },
+    "buttons": {
+      "edit": "تعديل",
+      "delete": "حذف"
+    }
+  }
+}
