@@ -7,7 +7,7 @@
     "start": "next start",
     "lint": "eslint",
     "postinstall": "prisma generate",
-    "build": "prisma migrate deploy && next build"
+    "build": "cross-env NEXT_DISABLE_TURBOPACK=1 next build"
   },
   "dependencies": {
     "@prisma/adapter-pg": "^7.3.0",
@@ -22,7 +22,7 @@
     "html2pdf.js": "^0.12.1",
     "jspdf": "^3.0.3",
     "jspdf-autotable": "^5.0.2",
-    "next": "15.5.4",
+    "next": "^16.1.6",
     "next-auth": "^4.24.11",
     "next-intl": "^4.8.0",
     "papaparse": "^5.5.3",
@@ -40,6 +40,7 @@
     "@types/papaparse": "^5.3.16",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "cross-env": "^10.1.0",
     "eslint": "^9",
     "eslint-config-next": "15.5.4",
     "prisma": "^7.3.0",

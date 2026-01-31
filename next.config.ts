@@ -3,9 +3,15 @@ const withNextIntl = require('next-intl/plugin')(
 );
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  experimental: {
+    turbo: false, // لو عايز توقف turbopack بسبب مشاكل CSS أو غيرها
+  },
+  // أي إعدادات تانية هنا
+};
 
 module.exports = withNextIntl(nextConfig);
+
 
 
 

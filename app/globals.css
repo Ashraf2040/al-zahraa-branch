@@ -1,10 +1,109 @@
-/* global.css */
 @import "tailwindcss";
 
-/* Print sheet */
+/* ===============================
+   Root theme variables
+================================ */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
 
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* ===============================
+   Print utilities (FIXED)
+================================ */
+@layer utilities {
+  @media print {
+    .print\:grid-cols-2 {
+      @apply grid grid-cols-2;
+    }
+
+    .no-print {
+      @apply hidden;
+    }
+
+    body {
+      background: white !important;
+    }
+  }
+}
 @media print {
-  .print\\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .no-print { display: none !important; }
-  body { background: white !important; }
+  button, input, textarea, select, .no-print {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+  }
+  .min-h-screen {
+    background: white !important;
+    min-height: auto !important;
+  }
+}
+/* ===============================
+   Buttons
+================================ */
+.btn-primary {
+  @apply rounded-lg bg-[#006d77] px-4 py-2.5 text-white shadow-sm
+         ring-1 ring-[#006d77]/20 hover:bg-[#006d77]/90
+         disabled:opacity-60;
+}
+
+.btn-secondary {
+  @apply rounded-lg bg-[#83c5be] px-4 py-2.5 text-slate-900 shadow-sm
+         ring-1 ring-[#83c5be]/40 hover:bg-[#83c5be]/90
+         disabled:opacity-60;
+}
+
+.btn-tertiary {
+  @apply rounded-lg border border-[#006d77]/30 bg-[#83c5be]
+         px-4 py-2.5 text-white shadow-sm
+         hover:bg-[#006d77]/5 disabled:opacity-60;
+}
+
+.btn-warning {
+  @apply rounded-lg bg-[#e29578] px-4 py-2.5 text-white shadow-sm
+         ring-1 ring-[#e29578]/20 hover:bg-[#e29578]/90
+         disabled:opacity-60;
+}
+   @font-face {
+      font-family: 'Amiri';
+      src: url('/fonts/Amiri-Regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Amiri';
+      src: url('/fonts/Amiri-Bold.ttf') format('truetype');
+      font-weight: bold;
+      font-style: normal;
+    }
+    @keyframes float-slow {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-25px) translateX(15px); }
+}
+@keyframes float-medium {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+@keyframes float-fast {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-30px); }
+}
+
+.animate-float-slow { animation: float-slow 24s ease-in-out infinite; }
+.animate-float-medium { animation: float-medium 20s ease-in-out infinite; }
+.animate-float-fast { animation: float-fast 18s ease-in-out infinite; }
+@layer utilities {
+  .bg-grid-slate-100\/40 {
+    background-image: 
+      linear-gradient(to right, rgba(241, 245, 249, 0.4) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(241, 245, 249, 0.4) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
 }

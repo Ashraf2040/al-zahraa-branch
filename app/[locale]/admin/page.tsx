@@ -582,7 +582,7 @@ export default function AdminDashboard() {
       )}
 
       {/* Floating Action Button for "Save All Grades" */}
-      <div className="fixed bottom-8 right-8 z-40">
+      <div className=" bottom-8 right-8 z-40">
         <button
           onClick={handleSaveAllGrades}
           disabled={allGradesLoading}
