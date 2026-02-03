@@ -5,7 +5,7 @@
     "tagline": "Streamlined dashboards for admins and teachers to manage classes, inquests, schedules, and notifications in one place.",
     "ctaSignedIn": "Dashboard",
     "ctaSignedOut": "Sign in",
-    "heroTitle": "ne platform for all your school needs.",
+    "heroTitle": "One platform for all your school needs.",
     "heroSubtitle": "Admins can manage teachers, inquests, and schedules, while teachers receive clear notifications and a focused daily dashboard.",
     "heroPrimary": "Go to Dashboard",
     "heroSecondary": "Learn more",
@@ -17,7 +17,7 @@
     "featureNotifyTitle": "Smart Notifications",
     "featureNotifyText": "New inquests become notifications for the relevant teacher."
   },
-  
+
   "LessonsFilter": {
     "title": "View Lessons & Teachers",
     "classLabel": "Class",
@@ -30,22 +30,19 @@
     "showLessonsTable": "Show Lessons Table",
     "showAssignedTeachers": "Show Assigned Teachers"
   },
-  "AdminHome":{
-
-  "adminDashboardTitle": "Admin Dashboard",
-  "adminDashboardSubtitle": "Select a module to manage your school efficiently.",
-  "teachersInquestsName": "Teachers Inquests",
-  "teachersInquestsDescription": "Create, review, and track inquests for teachers.",
-  "teachersName": "Teachers",
-  "teachersDescription": "Manage teacher accounts and assignments.",
-  "announcementsName": "Announcements",
-  "announcementsDescription": "Create and send announcements to teachers.",
-  "openModule": "Open module",
-  "title": "Administration",
+  "AdminHome": {
+    "adminDashboardTitle": "Admin Dashboard",
+    "adminDashboardSubtitle": "Select a module to manage your school efficiently.",
+    "teachersInquestsName": "Teachers Inquests",
+    "teachersInquestsDescription": "Create, review, and track inquests for teachers.",
+    "teachersName": "Teachers",
+    "teachersDescription": "Manage teacher accounts and assignments.",
+    "announcementsName": "Announcements",
+    "announcementsDescription": "Create and send announcements to teachers.",
+    "openModule": "Open module",
+    "title": "Administration",
     "subtitle": "Manage teachers, schedules, and lesson plans efficiently.",
     "status": "System Online"
-
-
   },
   "LessonsTable": {
     "title": "Submitted Lessons",
@@ -130,7 +127,7 @@
       "cancelButton": "Cancel"
     }
   },
-   "AdminAnnouncementsPage": {
+  "AdminAnnouncementsPage": {
     "create_new": "Create New Announcement",
     "general_title": "General Announcement",
     "general_desc": "Sent to <strong>all teachers</strong> in the school.",
@@ -140,7 +137,7 @@
     "no_announcements": "No announcements yet.",
     "view_attachment": "View attachment"
   },
-  
+
   "Sidebar": {
     "overview": "Overview",
     "teachersInquests": "Teachers Inquests",
@@ -168,7 +165,7 @@
     "viewProfile": "View / Edit profile",
     "settings": "Account settings"
   },
-   "AdminTeachers": {
+  "AdminTeachers": {
     "title": "Manage Teachers",
     "subtitle": "Create, edit, and assign teachers to classes and subjects.",
 
@@ -219,16 +216,16 @@
 
     "confirmDelete": "Are you sure you want to delete this teacher? This cannot be undone.",
     "password": "Password",
-  "newPassword": "New Password (leave blank to keep current)",
-  "cancel": "Cancel",
-  "saveChanges": "Save Changes",
-  "createClassTitle": "Create New Class",
-  "createSubjectTitle": "Create New Subject",
-  "classNamePlaceholder": "Class name",
-  "subjectNamePlaceholder": "Subject name",
-  "editTeacherTitle": "Edit Teacher: {{name}}",
-  "assignClasses": "Assign Classes",
-  "assignSubjects": "Assign Subjects"
+    "newPassword": "New Password (leave blank to keep current)",
+    "cancel": "Cancel",
+    "saveChanges": "Save Changes",
+    "createClassTitle": "Create New Class",
+    "createSubjectTitle": "Create New Subject",
+    "classNamePlaceholder": "Class name",
+    "subjectNamePlaceholder": "Subject name",
+    "editTeacherTitle": "Edit Teacher: {{name}}",
+    "assignClasses": "Assign Classes",
+    "assignSubjects": "Assign Subjects"
   },
   "AdminDashboard": {
     "title": "Admin Dashboard",
@@ -285,30 +282,38 @@
       "dailyPlan": "Daily Academic Plan"
     }
   },
-  "CreateTeacherForm": {
-    "title": "Create Teacher",
-    "labels": {
-      "username": "Username",
-      "name": "Name",
-      "password": "Password",
-      "assignClasses": "Assign Classes",
-      "assignSubjects": "Assign Subjects"
-    },
-    "placeholders": {
-      "username": "Enter username",
-      "name": "Enter full name",
-      "password": "Enter password"
-    },
-    "buttons": {
-      "create": "Create Teacher",
-      "working": "Working…"
-    },
-    "toast": {
-      "creating": "Creating teacher…",
-      "success": "Teacher created successfully",
-      "error": "Failed to create teacher:"
-    }
+ "CreateTeacherForm": {
+  "title": "Create Teacher / Admin",
+  "labels": {
+    "username": "Username",
+    "name": "Name (English)",
+    "arabicName": "الاسم بالعربية",
+    "password": "Password",
+    "role": "Role",
+    "assignClasses": "Assign Classes",
+    "assignSubjects": "Assign Subjects"
   },
+  "placeholders": {
+    "username": "Enter username",
+    "name": "Enter full name (English)",
+    "arabicName": "أدخل الاسم الكامل بالعربية",
+    "password": "Enter password"
+  },
+  "roles": {
+    "teacher": "TEACHER",
+    "admin": "ADMIN"
+  },
+  "buttons": {
+    "create": "Create",
+    "working": "Working…"
+  },
+  "toast": {
+    "creating": "Creating user…",
+    "success": "User created successfully",
+    "error": "Failed to create user:",
+    "arabicNameRequired": "Arabic name is required"
+  }
+},
   "CreateClassForm": {
     "title": "Create Class",
     "labels": {
@@ -382,36 +387,6 @@
       "lessonUpdated": "Lesson updated",
       "updateFailed": "Failed to update"
     },
-    "TeacherDataPage": {
-    "errors": {
-      "requestFailed": "Request failed"
-    },
-    "toast": {
-      "loading": "Loading teachers…",
-      "success": "Teachers loaded",
-      "error": "Failed to load: {message}"
-    },
-    "header": {
-      "title": "Teacher Details",
-      "subtitle": "Formatted cards for export and printing."
-    },
-    "actions": {
-      "back": "Back",
-      "print": "Print"
-    },
-    "card": {
-      "classesCount": "{count} classes",
-      "username": "Username:",
-      "password": "Password:",
-      "classes": "Classes:",
-      "none": "None",
-      "noneDash": "-"
-    },
-    "empty": "No teachers found.",
-    "loading": {
-      "working": "Working..."
-    }
-  },
     "errors": {
       "notAuthenticated": "Not authenticated"
     },
@@ -456,11 +431,35 @@
         "actions": "Actions"
       }
     }
-    
+  },
+  "TeacherDataPage": {
+    "errors": {
+      "requestFailed": "Request failed"
+    },
+    "toast": {
+      "loading": "Loading teachers…",
+      "success": "Teachers loaded",
+      "error": "Failed to load: {message}"
+    },
+    "header": {
+      "title": "Teacher Details",
+      "subtitle": "Formatted cards for export and printing."
+    },
+    "actions": {
+      "back": "Back",
+      "print": "Print"
+    },
+    "card": {
+      "classesCount": "{count} classes",
+      "username": "Username:",
+      "password": "Password:",
+      "classes": "Classes:",
+      "none": "None",
+      "noneDash": "-"
+    },
+    "empty": "No teachers found.",
+    "loading": {
+      "working": "Working..."
+    }
   }
- 
-
-
-  
-  
 }

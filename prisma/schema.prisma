@@ -10,6 +10,7 @@ model User {
   id             String    @id @default(uuid())
   username       String    @unique
   name           String
+  arabicName      String?
   password       String
   role           String
 
@@ -26,6 +27,7 @@ model User {
 model Class {
   id          String       @id @default(uuid())
   name        String
+  arbicName   String?
   teachers    User[]       @relation("TeacherClasses")
   lessons     Lesson[]
   schedule    Schedule[]
@@ -35,6 +37,7 @@ model Class {
 model Subject {
   id              String           @id @default(uuid())
   name            String
+  arbicName       String ?
   teachers        User[]           @relation("TeacherSubjects")
   lessons         Lesson[]
   weeklyPlanItems WeeklyPlanItem[]

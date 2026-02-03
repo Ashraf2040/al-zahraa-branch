@@ -1,10 +1,7 @@
 import { prisma } from '@/app/utils/prisma';
 import { NextResponse } from 'next/server';
 
-
-// Ensure Node.js runtime (safe for Prisma on Vercel)
 export const runtime = 'nodejs';
-
 
 export async function GET() {
   try {
@@ -20,18 +17,22 @@ export async function GET() {
 
 export async function POST(request: Request) {
   try {
-    const { username, name, password, classIds, subjectIds, role } = await request.json();
+    const body = await request.json();
+    const { username, name, arabicName, password, classIds, subjectIds, role } = body;
 
     if (!username || !name || !password || !role) {
       return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
+    // Optional: you can add more validation
+    // if (role !== 'TEACHER') return NextResponse.json({ error: 'Invalid role' }, { status: 400 });
+
     const teacher = await prisma.user.create({
       data: {
         username,
         name,
-        // Store plain text password (for small-scale/local use only)
-        password,
+        arabicName: arabicName?.trim() || null,  
+        password,                                 
         role,
         ...(Array.isArray(classIds) && classIds.length
           ? { classes: { connect: classIds.map((id: string) => ({ id })) } }
@@ -44,7 +45,11 @@ export async function POST(request: Request) {
     });
 
     return NextResponse.json(teacher);
-  } catch (error) {
-    return NextResponse.json({ error: 'Failed to create teacher' }, { status: 500 });
+  } catch (error: any) {
+    console.error(error);
+    const message = error?.code === 'P2002'
+      ? 'Username already exists'
+      : 'Failed to create teacher';
+    return NextResponse.json({ error: message }, { status: 400 });
   }
 }

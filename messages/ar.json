@@ -429,29 +429,37 @@
     }
   },
  "CreateTeacherForm": {
-    "title": "إنشاء معلم جديد",
-    "labels": {
-      "username": "اسم المستخدم",
-      "name": "الاسم",
-      "password": "كلمة المرور",
-      "assignClasses": "تعيين الفصول",
-      "assignSubjects": "تعيين المواد"
-    },
-    "placeholders": {
-      "username": "أدخل اسم المستخدم",
-      "name": "أدخل الاسم الكامل",
-      "password": "أدخل كلمة المرور"
-    },
-    "buttons": {
-      "create": "إنشاء المعلم",
-      "working": "جاري العمل…"
-    },
-    "toast": {
-      "creating": "جاري إنشاء المعلم…",
-      "success": "تم إنشاء المعلم بنجاح",
-      "error": "فشل إنشاء المعلم:"
-    }
+  "title": "إنشاء معلم / مدير",
+  "labels": {
+    "username": "اسم المستخدم",
+    "name": "الاسم (بالإنجليزية)",
+    "arabicName": "الاسم بالعربية",
+    "password": "كلمة المرور",
+    "role": "الدور",
+    "assignClasses": "تعيين الفصول الدراسية",
+    "assignSubjects": "تعيين المواد الدراسية"
   },
+  "placeholders": {
+    "username": "أدخل اسم المستخدم",
+    "name": "أدخل الاسم الكامل (بالإنجليزية)",
+    "arabicName": "أدخل الاسم الكامل بالعربية",
+    "password": "أدخل كلمة المرور"
+  },
+  "roles": {
+    "teacher": "معلم",
+    "admin": "مدير"
+  },
+  "buttons": {
+    "create": "إنشاء",
+    "working": "جاري العمل…"
+  },
+  "toast": {
+    "creating": "جاري إنشاء المستخدم…",
+    "success": "تم إنشاء المستخدم بنجاح",
+    "error": "فشل في إنشاء المستخدم:",
+    "arabicNameRequired": "الاسم بالعربية مطلوب"
+  }
+},
   "TeacherDataPage": {
     "errors": {
       "requestFailed": "فشل الطلب"

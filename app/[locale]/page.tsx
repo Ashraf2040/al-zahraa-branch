@@ -9,7 +9,7 @@ import { useRouter } from 'next/navigation';
 export default function Home() {
   const { data: session, status } = useSession();
   const router = useRouter();
-
+ const currentYear = new Date().getFullYear();
   useEffect(() => {
     if (status !== 'authenticated') return;
     const role = (session?.user as any)?.role;
@@ -41,7 +41,7 @@ export default function Home() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
             </span>
-            Academic Management System 2024
+           Academic Management System {currentYear}
           </span>
         </div>
 

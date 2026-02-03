@@ -25,40 +25,38 @@ export default function DashboardNavbar() {
       .toUpperCase() || "U";
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 w-full border-b border-slate-200/50 bg-white/80 backdrop-blur-lg shadow-sm transition-all duration-300">
-      {/* Gradient Accent Bar */}
-    
-      
-      <div className="mx-auto w-full px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 sm:h-20 items-center justify-between gap-4 max-w-7xl mx-auto">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full border-b border-slate-200/60 bg-white/90 backdrop-blur-xl shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05)] transition-all duration-300">
+      <div className="w-full h-16 sm:h-20 px-4 sm:px-6 lg:px-8">
+        <div className="flex h-full items-center justify-between">
           
           {/* Branding / Logo */}
           <Link
             href={role === "ADMIN" ? "/admin" : "/teacher"}
-            className="flex items-center gap-3 group transition-transform hover:scale-[1.01]"
+            className="flex items-center gap-4 group transition-transform active:scale-95"
           >
             {/* Logo Box */}
-            <div className="relative flex h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-xl bg-gradient-to-br from-teal-600 to-emerald-600 text-white shadow-lg shadow-teal-600/20 transition-all duration-300 group-hover:rotate-3 group-hover:shadow-teal-600/40">
+            <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-teal-500 to-emerald-600 text-white shadow-md shadow-teal-500/20 group-hover:shadow-lg group-hover:shadow-teal-500/40 transition-all duration-300 group-hover:-translate-y-0.5">
               <span className="font-bold text-lg tracking-tighter">SM</span>
             </div>
             
             {/* Text */}
-            <div className="leading-tight hidden sm:block group-hover:text-slate-900 transition-colors">
-              <p className="text-base font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-600">
+            <div className="leading-tight hidden sm:block">
+              <p className="text-base font-bold text-slate-900">
                 {t("appName")}
               </p>
-              <p className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-slate-500">
+              <p className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-widest text-teal-600">
                 {role === "ADMIN" ? t("adminDashboard") : t("teacherDashboard")}
               </p>
             </div>
           </Link>
 
           {/* Right Actions (Profile & Language) */}
-          <div className="flex items-center gap-2 sm:gap-4">
+          <div className="flex items-center gap-2 sm:gap-6">
          
             <LanguageSwitcher />
             
-            <div className="h-8 w-px bg-slate-200 hidden sm:block"></div>
+            {/* Vertical Divider - Hidden on mobile for space */}
+            <div className="h-6 w-px bg-slate-200 hidden sm:block"></div>
 
             <ProfileDropdown
               name={session.user.name || t("user")}

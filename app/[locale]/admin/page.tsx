@@ -231,23 +231,27 @@ export default function AdminDashboard() {
       <div className="mx-auto w-full px-4 sm:px-6 lg:px-8 py-8">
 
         {/* ================= HEADER ================= */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-10 gap-4">
-          <div>
-            <h1 className="text-3xl font-bold tracking-tight text-slate-900">
-              {t('title')}
-              <span className="text-teal-600">.</span>
-            </h1>
-            <p className="mt-1 text-sm text-slate-500">
-              {t('subtitle')}
-            </p>
-          </div>
-          <div className="bg-white px-4 py-2 rounded-lg border border-slate-200 shadow-sm flex items-center gap-2 text-sm text-slate-600">
-            <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse" />
-            <span className="font-medium">
-              {t('status')}
-            </span>
-          </div>
-        </div>
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 gap-4 border-b border-slate-100 pb-6">
+  <div>
+    <h1 className="text-3xl font-bold tracking-tight text-slate-900">
+      {t('title')}
+      <span className="text-slate-400">.</span>
+    </h1>
+    <p className="mt-2 text-sm font-medium text-slate-400 uppercase tracking-wider">
+      {t('subtitle')}
+    </p>
+  </div>
+  
+  <div className="flex items-center gap-2 rounded-md bg-slate-100 px-3 py-1.5">
+    <span className="relative flex h-2 w-2">
+      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+      <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+    </span>
+    <span className="text-xs font-semibold text-slate-600">
+      {t('status')}
+    </span>
+  </div>
+</div>
 
         {/* ================= QUICK ACTIONS GRID ================= */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-10">
