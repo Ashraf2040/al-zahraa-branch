@@ -81,7 +81,7 @@ export default function Home() {
           </h1>
 
           <p className="mx-auto text-xl text-slate-600 leading-8 max-w-2xl font-light">
-            A unified platform designed for <strong className="text-slate-800 font-medium">Al-Zahraa Private Schools</strong> to streamline lesson planning, administrative oversight, and real-time academic coordination.
+            A unified platform designed for <strong className="text-slate-800 font-medium">Al-Forqan Private Schools</strong> to streamline lesson planning, administrative oversight, and real-time academic coordination.
           </p>
         </div>
 

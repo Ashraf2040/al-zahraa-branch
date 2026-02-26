@@ -799,7 +799,8 @@ export default function TeacherDashboard() {
                                 </div>
                               ) : (
                                 <>
-                                  <button
+                                  <div className='flex justify-center items-center gap-2'>
+                                    <button
                                     onClick={() => startEdit(row)}
                                     disabled={pendingCount > 0}
                                     className="group/btn rounded-lg bg-slate-50 px-3 py-1.5 text-xs font-medium text-teal-700 shadow-sm hover:bg-teal-600 hover:text-white transition disabled:opacity-50"
@@ -809,10 +810,11 @@ export default function TeacherDashboard() {
                                   <button
                                     onClick={() => handleDelete(row.id)}
                                     disabled={pendingCount > 0}
-                                    className="rounded-md bg-white border border-red-200 text-red-600 hover:bg-red-50 px-3 py-1.5 shadow-sm ring-1 ring-red-100 transition disabled:opacity-60"
+                                     className="group/btn rounded-lg bg-slate-50 px-3 py-1.5 text-xs font-medium text-teal-700 shadow-sm hover:bg-teal-600 hover:text-white transition disabled:opacity-50"
                                   >
                                     Delete
                                   </button>
+                                  </div>
                                 </>
                               )}
                             </td>

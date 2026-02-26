@@ -179,40 +179,359 @@ export default function AdminDashboard() {
     }
   };
 
-  const handlePrint = () => {
-    const w = window.open('', '_blank');
-    if (!w) return;
-    const date = new Date().toLocaleDateString('en-US', {
-      weekday: 'long',
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    });
-    const cls = classes.find((c) => c.id === filter.classId);
-    const html = document.getElementById('lessons-table')?.outerHTML ?? '';
-    w.document.write(`
-<html>
+const handlePrint = () => {
+  const w = window.open('', '_blank');
+  if (!w) return;
+  
+  const date = new Date().toLocaleDateString('ar-SA', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+  
+  const cls = classes.find((c) => c.id === filter.classId);
+  const html = document.getElementById('lessons-table')?.outerHTML ?? '';
+  
+w.document.write(`
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
 <head>
-<title>${cls?.name ?? ''} - ${date}</title>
-<style>
-  body { font-family: Arial, sans-serif; margin: 20px; direction: rtl; }
-  h1 { text-align: center; color: #064e4f; }
-  table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-  th, td { border: 1px solid #ddd; padding: 8px; text-align: right; }
-  th { background: #006d77; color: white; }
-  tr:nth-child(odd) { background: #f8fafc; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${cls?.name ?? ''} - ${date}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --primary-color: #006d77;
+      --primary-dark: #064e4f;
+      --primary-light: #83c5be;
+      --accent-color: #e29578;
+      --text-dark: #1a1a2e;
+      --text-light: #4a5568;
+      --bg-light: #f8fafc;
+      --bg-white: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    @page {
+      size: A4;
+      margin: 15mm 10mm 25mm 10mm;
+    }
+
+    body {
+      font-family: 'Cairo', 'Segoe UI', Tahoma, sans-serif;
+      font-size: 12pt;
+      line-height: 1.7;
+      color: var(--text-dark);
+      background: var(--bg-white);
+      direction: rtl;
+      text-align: right;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page-container {
+      max-width: 310mm;
+      margin: 0 auto;
+      padding: 10mm;
+      padding-bottom: 30mm;
+    }
+
+    .report-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-white) 100%);
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .report-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--primary-color), var(--accent-color));
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, #ffffff 0%, var(--bg-light) 100%);
+      border-radius: 14px;
+      border: 2px solid var(--primary-light);
+      box-shadow: 0 2px 8px rgba(0, 109, 119, 0.15);
+      padding: 8px;
+    }
+
+    .logo-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    .logo-fallback {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .institution-info h2 {
+      font-size: 18pt;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 4px;
+    }
+
+    .institution-info p {
+      font-size: 10pt;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    .header-left {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+      padding: 12px 16px;
+      background: var(--bg-white);
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+    }
+
+    .report-date {
+      font-size: 11pt;
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+
+    .report-id {
+      font-size: 9pt;
+      color: var(--primary-color);
+      font-weight: 600;
+      padding: 4px 10px;
+      background: rgba(0, 109, 119, 0.08);
+      border-radius: 20px;
+    }
+
+    .report-title {
+      text-align: center;
+      padding: 28px 20px;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-white) 100%);
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
+    }
+
+    .report-title h1 {
+      font-size: 22pt;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 10px;
+    }
+
+    .accent-line {
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-color), var(--primary-light), var(--primary-color));
+      border-radius: 2px;
+      margin: 12px auto;
+    }
+
+    .title-class-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 12px;
+    }
+
+    .report-title .class-name {
+      font-size: 15pt;
+      color: var(--primary-color);
+      font-weight: 600;
+      padding: 6px 20px;
+      background: rgba(0, 109, 119, 0.08);
+      border-radius: 25px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .info-card {
+      background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-white) 100%);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 16px 18px;
+      border-right: 4px solid var(--primary-color);
+      box-shadow: var(--shadow);
+    }
+
+    .info-card .label {
+      font-size: 9pt;
+      color: var(--text-light);
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    .info-card .value {
+      font-size: 12pt;
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin: 24px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-color);
+    }
+
+    .data-table th {
+      background: linear-gradient(180deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+      color: white;
+      font-weight: 600;
+      font-size: 11pt;
+      padding: 16px 14px;
+      text-align: right;
+      border-bottom: 3px solid var(--primary-dark);
+    }
+
+    .data-table th:first-child { border-top-right-radius: 11px; }
+    .data-table th:last-child { border-top-left-radius: 11px; }
+
+    .data-table tbody tr:nth-child(odd) { background: var(--bg-light); }
+    .data-table tbody tr:nth-child(even) { background: var(--bg-white); }
+
+    .data-table td {
+      padding: 14px;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 10pt;
+    }
+
+    .data-table tbody tr:last-child td { border-bottom: none; }
+    .data-table tbody tr:last-child td:first-child { border-bottom-right-radius: 11px; }
+    .data-table tbody tr:last-child td:last-child { border-bottom-left-radius: 11px; }
+
+    .report-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 24px;
+      font-size: 8pt;
+      color: var(--text-light);
+      background: var(--bg-light);
+      border-top: 1px solid var(--border-color);
+    }
+
+    @media print {
+      html, body {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      .report-header, .report-title, .info-card, .data-table { box-shadow: none !important; }
+      .data-table { page-break-inside: auto; }
+      .data-table tr { page-break-inside: avoid; }
+      .data-table thead { display: table-header-group; }
+    }
+  </style>
 </head>
 <body>
-  <h1>${t('print.dailyPlan')} – ${cls?.name ?? ''} – ${date}</h1>
-  ${html}
+  <div class="page-container">
+    <header class="report-header">
+      <div class="header-right">
+        <div class="logo-container">
+          <img src="/forqan-logo.jpeg" alt="شعار مدرسة الفرقان" onerror="this.outerHTML='<div class=\\'logo-fallback\\'>ف</div>'">
+        </div>
+        <div class="institution-info">
+          <h2>مدرسة الفرقان الأهلية</h2>
+          <p>وزارة التربية والتعليم</p>
+        </div>
+      </div>
+      <div class="header-left">
+        <div class="report-date">${date}</div>
+        <div class="report-id">رقم التقرير: ${Date.now().toString(36).toUpperCase()}</div>
+      </div>
+    </header>
+
+    <div class="report-title">
+      <h1>${t('print.dailyPlan')}</h1>
+      <div class="accent-line"></div>
+      <div class="title-class-wrapper">
+        <div class="class-name">${cls?.name ?? 'غير محدد'}</div>
+      </div>
+    </div>
+
+   
+
+    <main>
+      ${html.replace(/<table/g, '<table class="data-table"')}
+    </main>
+
+    <footer class="report-footer">
+      <span>تم إنشاء هذا التقرير تلقائياً • نظام إدارة الخطط الدراسية</span>
+      <span>© ${new Date().getFullYear()} جميع الحقوق محفوظة</span>
+    </footer>
+  </div>
+
+  <script>
+    const table = document.querySelector('.data-table');
+    if (table) {
+      const rowCount = table.querySelectorAll('tbody tr').length;
+      document.getElementById('record-count').textContent = rowCount.toLocaleString('ar-SA');
+    }
+    document.fonts.ready.then(() => setTimeout(() => window.print(), 300));
+  </script>
 </body>
 </html>
 `);
-    w.document.close();
-    w.focus();
-    setTimeout(() => w.print(), 500);
-  };
+  
+  w.document.close();
+  w.focus();
+};
 
   return (
     <div className="min-h-screen w-ful text-slate-900 relative overflow-hidden bg-slate-50 selection:bg-teal-100 selection:text-teal-900 pt-24">
