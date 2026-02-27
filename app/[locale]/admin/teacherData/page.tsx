@@ -14,6 +14,7 @@ declare module 'next-auth' {
     user: {
       id: string;
       name: string;
+      arabicName: string;
       email: string;
       username: string;
       role: string;

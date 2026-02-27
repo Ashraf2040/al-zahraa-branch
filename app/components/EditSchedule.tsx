@@ -52,7 +52,6 @@ const weekdayKeys = [
   'tuesday',
   'wednesday',
   'thursday',
-  
 ];
 
 export default function EditSchedule({
@@ -64,12 +63,10 @@ export default function EditSchedule({
 }: Props) {
   const t = useTranslations('ScheduleManager');
   const tc = useTranslations('Common');
+  const locale = useLocale() || 'en';
 
-  if (!user || !user.id) {
-    console.error('EditSchedule: User prop is missing or invalid');
-    return null;
-  }
-
+  // ✅ ALL HOOKS MUST BE CALLED FIRST - BEFORE ANY EARLY RETURNS
+  
   const [selectedClassIds, setSelectedClassIds] = useState<string[]>([]);
   const [schedule, setSchedule] = useState<Schedule>({});
   const [loading, setLoading] = useState(false);
@@ -114,12 +111,23 @@ export default function EditSchedule({
     }
   }, [selectedClassIds, editMode, activeTab]);
 
+  // ✅ NOW - AFTER ALL HOOKS - you can do early returns or conditional rendering
+  
+  // Option 1: Early return (after hooks)
+  if (!user || !user.id) {
+    console.error('EditSchedule: User prop is missing or invalid');
+    return null;
+  }
+
+  // Also check show prop here
+  if (!show) return null;
+
   const toggleClassSelection = (classId: string) => {
     setSelectedClassIds((prev) =>
       prev.includes(classId) ? prev.filter((id) => id !== classId) : [...prev, classId],
     );
   };
-const locale = useLocale() || 'en';
+
   const toggleSubjectForDay = (dayIndex: number, subjectId: string) => {
     setSchedule((prev) => {
       const daySubjects = prev[dayIndex] || [];
@@ -232,7 +240,6 @@ const locale = useLocale() || 'en';
     );
   };
 
-  if (!show) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 backdrop-blur-md p-4 sm:p-6 animate-in fade-in zoom-in-95 duration-200">
