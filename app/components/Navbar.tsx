@@ -1,18 +1,20 @@
 // app/components/Navbar.tsx
 'use client';
 
-import { useState } from 'react';
+import { use, useState } from 'react';
 import Link from 'next/link';
 import { useSession, signIn, signOut } from 'next-auth/react';
 import Image from 'next/image';
+import { useLocale } from 'next-intl';
 
 export default function Navbar() {
   const { data: session, status } = useSession();
   const [open, setOpen] = useState(false);
-
+const locale = useLocale();
   const isAuthed = status === 'authenticated';
   const role = session?.user?.role as 'ADMIN' | 'TEACHER' | undefined;
-  const name = session?.user?.name ?? '';
+  const name = locale === 'ar' ? session?.user?.arabicName : session?.user?.name; 
+  
   const username = session?.user?.username ?? '';
   const destination = role === 'ADMIN' ? '/admin' : '/teacher';
 

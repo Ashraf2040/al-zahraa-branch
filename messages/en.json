@@ -461,5 +461,43 @@
     "loading": {
       "working": "Working..."
     }
-  }
+  },
+ "ScheduleManager": {
+  "title": "Schedule Manager",
+  "tabs": {
+    "editSchedule": "Edit Schedule",
+    "history": "History"
+  },
+  "labels": {
+    "selectClasses": "Select Classes",
+    "assignSubjectsByDay": "Assign Subjects by Day",
+    "createdOn": "Created on {date}"
+  },
+  "table": {
+    "day": "Day"
+  },
+  "weekdays": {
+    "sunday": "Sunday",
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday"
+  
+  },
+  "toast": {
+    "selectAtLeastOneClass": "Please select at least one class.",
+    "failedLoadHistory": "Failed to load schedule history",
+    "scheduleSaved": "Schedule saved!",
+    "failedSave": "Failed to save schedule",
+    "editingScheduleFor": "Editing schedule for {className}",
+    "scheduleDeleted": "Schedule deleted",
+    "failedDelete": "Failed to delete"
+  },
+  "status": {
+    "loadingHistory": "Loading history...",
+    "noSavedSchedulesYet": "No saved schedules yet."
+  },
+  "noSubjectsAssigned": "No subjects assigned"
+}
+
 }

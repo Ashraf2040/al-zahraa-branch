@@ -1,12 +1,18 @@
 import { prisma } from '@/app/utils/prisma';
-import { type NextAuthOptions, DefaultSession, User as NextAuthUser } from 'next-auth';
+import { type NextAuthOptions, DefaultSession } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
+import { JWT } from 'next-auth/jwt';
+
+/* ===============================
+   Extend NextAuth Types
+================================= */
 
 declare module 'next-auth' {
     interface Session {
         user: {
             id: string;
             name: string;
+            arabicName: string;
             email: string;
             username: string;
             role: string;
@@ -17,9 +23,25 @@ declare module 'next-auth' {
         id: string;
         name: string;
         username: string;
+        arabicName: string;
         role: string;
     }
 }
+
+declare module 'next-auth/jwt' {
+    interface JWT {
+        id: string;
+        name: string;
+        arabicName: string;
+        username: string;
+        role: string;
+        email?: string;
+    }
+}
+
+/* ===============================
+   Auth Options
+================================= */
 
 export const authOptions: NextAuthOptions = {
     session: {
@@ -29,23 +51,29 @@ export const authOptions: NextAuthOptions = {
     providers: [
         CredentialsProvider({
             name: 'Credentials',
+
             credentials: {
                 username: { label: 'Username', type: 'text' },
                 password: { label: 'Password', type: 'password' },
             },
 
-            async authorize(credentials) {
-                if (!credentials?.username || !credentials?.password) return null;
+            async authorize(credentials, req) {
+                if (!credentials?.username || !credentials?.password) {
+                    return null;
+                }
 
                 const user = await prisma.user.findUnique({
-                    where: { username: credentials.username },
+                    where: {
+                        username: credentials.username,
+                    },
                     select: {
                         id: true,
                         name: true,
-                      
+                        arabicName: true,
                         username: true,
                         password: true,
                         role: true,
+                        
                     },
                 });
 
@@ -55,8 +83,10 @@ export const authOptions: NextAuthOptions = {
                 return {
                     id: user.id,
                     name: user.name,
+                    arabicName: user.arabicName || '',
                     username: user.username,
                     role: user.role,
+                    
                 };
             },
         }),
@@ -67,27 +97,42 @@ export const authOptions: NextAuthOptions = {
     },
 
     callbacks: {
+        /* ===============================
+           JWT Callback
+        ================================= */
+
         async jwt({ token, user }) {
             if (user) {
-                token.id = user.id;
-                token.name = user.name;
-                token.username = user.username;
-                token.role = user.role;
+                Object.assign(token, {
+                    id: user.id,
+                    name: user.name,
+                    arabicName: user.arabicName,
+                    username: user.username,
+                    role: user.role,
+                    email: user.email,
+                });
             }
+
             return token;
         },
 
+        /* ===============================
+           Session Callback
+        ================================= */
+
         async session({ session, token }) {
-            if (token?.id) {
-                session.user = {
-                    email: (token.email as string) ?? '',
+            return {
+                ...session,
+                user: {
+                    ...session.user,
                     id: token.id as string,
                     name: token.name as string,
+                    arabicName: token.arabicName as string,
                     username: token.username as string,
                     role: token.role as string,
-                };
-            }
-            return session;
+                    email: token.email as string,
+                },
+            };
         },
     },
 };

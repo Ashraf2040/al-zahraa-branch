@@ -544,5 +544,42 @@
       "edit": "تعديل",
       "delete": "حذف"
     }
-  }
+  },
+  "ScheduleManager": {
+  "title": "مدير الجدول الدراسي",
+  "tabs": {
+    "editSchedule": "تعديل الجدول",
+    "history": "السجل"
+  },
+  "labels": {
+    "selectClasses": "اختر الفصول",
+    "assignSubjectsByDay": "تعيين المواد حسب اليوم",
+    "createdOn": "تم الإنشاء في {date}"
+  },
+  "table": {
+    "day": "اليوم"
+  },
+  "weekdays": {
+    "sunday": "الأحد",
+    "monday": "الإثنين",
+    "tuesday": "الثلاثاء",
+    "wednesday": "الأربعاء",
+    "thursday": "الخميس"
+    
+  },
+  "toast": {
+    "selectAtLeastOneClass": "يرجى اختيار فصل واحد على الأقل.",
+    "failedLoadHistory": "فشل تحميل سجل الجداول",
+    "scheduleSaved": "تم حفظ الجدول!",
+    "failedSave": "فشل حفظ الجدول",
+    "editingScheduleFor": "جاري تعديل جدول {className}",
+    "scheduleDeleted": "تم حذف الجدول",
+    "failedDelete": "فشل الحذف"
+  },
+  "status": {
+    "loadingHistory": "جاري تحميل السجل...",
+    "noSavedSchedulesYet": "لا توجد جداول محفوظة بعد."
+  },
+  "noSubjectsAssigned": "لم يتم تعيين أي مواد"
+}
 }

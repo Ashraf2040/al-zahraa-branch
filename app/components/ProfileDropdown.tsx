@@ -3,7 +3,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { SignOutButton } from "./SignOutButton";
 
 
@@ -12,17 +12,19 @@ type ProfileDropdownProps = {
   email: string;
   role: string;
   initials: string;
+  arabicName: string;
 };
 
 export function ProfileDropdown({
   name,
   email,
+  arabicName,
   role,
   initials,
 }: ProfileDropdownProps) {
   const [open, setOpen] = useState(false);
   const t = useTranslations("ProfileDropdown");
-
+  const locale=useLocale();
   return (
     <div className="relative">
       <button
@@ -31,7 +33,7 @@ export function ProfileDropdown({
         className="flex items-center gap-2 rounded-full border border-slate-200 bg-white px-2.5 py-1.5 text-left shadow-sm hover:border-teal-500 hover:bg-teal-50 transition"
       >
         <div className="hidden sm:block">
-          <p className="text-xs font-semibold text-slate-900">{name}</p>
+          <p className="text-xs font-semibold text-slate-900">{locale === 'ar' ? arabicName : name}</p>
           <p className="text-[11px] text-slate-500">
             {role === "ADMIN" ? t("roles.admin") : t("roles.teacher")}
           </p>
