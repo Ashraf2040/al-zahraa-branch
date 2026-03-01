@@ -391,7 +391,9 @@
       "hideCreateSubject": "إخفاء نموذج إنشاء المادة",
       "manageSchedules": "إدارة الجداول",
       "saveAllGrades": "حفظ جميع الصفوف لهذا التاريخ",
-      "savingAllGrades": "جاري حفظ جميع الصفوف..."
+      "savingAllGrades": "جاري حفظ جميع الصفوف...",
+      "manageClassSubject": "إدارة الصفوف والمواد",
+      "hideManageClassSubject": "إخفاء إدارة الصفوف والمواد"
     },
 
     "table": {

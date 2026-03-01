@@ -738,7 +738,7 @@ w.document.write(`
   }}
   className={`group flex flex-col items-center justify-center gap-3 p-5 rounded-2xl border transition-all ${showManageClassSubject ? 'border-indigo-500 bg-indigo-50' : 'border-slate-200 bg-white hover:-translate-y-1'}`}
 >
-  <span className="text-sm font-semibold">{showManageClassSubject ? 'Hide Management' : 'Manage Classes & Subjects'}</span>
+  <span className="text-sm font-semibold">{showManageClassSubject ? t('buttons.hideManageClassSubject') : t('buttons.manageClassSubject')}</span>
 </button>
         </div>
 

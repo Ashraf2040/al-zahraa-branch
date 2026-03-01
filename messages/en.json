@@ -245,7 +245,9 @@
       "hideCreateSubject": "Hide Create Subject",
       "manageSchedules": "Manage Schedules",
       "saveAllGrades": "Save All Grades for Date",
-      "savingAllGrades": "Saving All Grades…"
+      "savingAllGrades": "Saving All Grades…",
+      "manageClassSubject": "Manage Classes & Subjects",
+      "hideManageClassSubject": "Hide Manage Classes & Subjects"
     },
 
     "table": {
