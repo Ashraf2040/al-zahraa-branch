@@ -581,5 +581,8 @@
     "noSavedSchedulesYet": "لا توجد جداول محفوظة بعد."
   },
   "noSubjectsAssigned": "لم يتم تعيين أي مواد"
-}
+},
+"ManageClassSubject": {
+    "title": "إدارة الصفوف والمواد"
+  }
 }

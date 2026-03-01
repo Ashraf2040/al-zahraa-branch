@@ -19,6 +19,7 @@ import LessonsTable from '@/app/components/LessonsTable';
 import AllGradesLessonsTable from '@/app/components/AllGradesLessonsTable';
 import AssignedTeachersTable from '@/app/components/AssignedTeachersTable';
 import EditSchedule from '@/app/components/EditSchedule';
+import ManageClassSubject from '@/app/components/ManageClassSubject';
 
 // Imports kept intact
 
@@ -55,7 +56,7 @@ export default function AdminDashboard() {
   const [allGradesLoading, setAllGradesLoading] = useState(false);
   const [showAllGrades, setShowAllGrades] = useState(false);
   const [showScheduleModal, setShowScheduleModal] = useState(false);
-
+const [showManageClassSubject, setShowManageClassSubject] = useState(false);
   // ——— Filter & Lessons ———
   const [filter, setFilter] = useState({ classId: '', date: '' });
   const [lessons, setLessons] = useState<any[]>([]);
@@ -730,6 +731,15 @@ w.document.write(`
               {t('buttons.manageSchedules')}
             </span>
           </button>
+          <button
+  onClick={() => {
+    setShowManageClassSubject((v) => !v);
+    if (!showManageClassSubject) { setShowTeacherForm(false); setShowClassForm(false); setShowSubjectForm(false); }
+  }}
+  className={`group flex flex-col items-center justify-center gap-3 p-5 rounded-2xl border transition-all ${showManageClassSubject ? 'border-indigo-500 bg-indigo-50' : 'border-slate-200 bg-white hover:-translate-y-1'}`}
+>
+  <span className="text-sm font-semibold">{showManageClassSubject ? 'Hide Management' : 'Manage Classes & Subjects'}</span>
+</button>
         </div>
 
         {/* ================= MAIN CONTENT AREA ================= */}
@@ -773,7 +783,14 @@ w.document.write(`
             }}
             pending={pending}
           />
-
+<ManageClassSubject
+  show={showManageClassSubject}
+  track={track}
+  fetchJson={fetchJson}
+  toast={toast}
+  onSuccess={() => { refreshClasses(); refreshSubjects(); }}
+  pending={pending}
+/>
           {/* Teacher List */}
           <TeacherList
             show={showTeacherDetails}
