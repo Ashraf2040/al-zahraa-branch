@@ -19,11 +19,11 @@ export default function LessonsTable({show, loading, lessons, onPrint}: Props) {
 
   if (!show) return null;
 
-  const sorted = [...lessons].sort(
-    (a, b) =>
-      subjectSortIndex(a.subject?.name ?? '') -
-      subjectSortIndex(b.subject?.name ?? '')
-  );
+  // const sorted = [...lessons].sort(
+  //   (a, b) =>
+  //     subjectSortIndex(a.subject?.name ?? '') -
+  //     subjectSortIndex(b.subject?.name ?? '')
+  // );
 
   return (
     <div className="mt-8 overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-gray-200">
@@ -84,7 +84,7 @@ export default function LessonsTable({show, loading, lessons, onPrint}: Props) {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
-                {sorted.map((l, i) => (
+                {lessons.map((l, i) => (
                   <tr
                     key={l.id}
                     className={i % 2 === 0 ? 'bg-white' : 'bg-gray-50'}
