@@ -24,7 +24,7 @@
     "jspdf-autotable": "^5.0.2",
     "next": "^15.0.3",
     "next-auth": "^4.24.11",
-    "next-intl": "^4.8.0",
+    "next-intl": "^4.9.1",
     "papaparse": "^5.5.3",
     "pizzip": "^3.2.0",
     "react": "19.1.0",
